@@ -41,6 +41,7 @@ def main():
         img = osp.join(inps, tmp)
         img = cv2.imread(img)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        img = torch.Tensor(img)
         
         output = model.forward(img)
         
