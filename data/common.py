@@ -4,6 +4,7 @@ import numpy as np
 import scipy.misc as misc
 import imageio
 from tqdm import tqdm
+import cv2
 
 import torch
 
@@ -100,6 +101,9 @@ def read_img(path, data_type):
         img = np.expand_dims(img, axis=2)
     return img
 
+def resize_img(img):
+    x4_img = misc.imresize(img, 1 / 4, interp='bicubic')
+    return x4_img
 
 ####################
 # image processing
